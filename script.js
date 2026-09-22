@@ -1,7 +1,5 @@
 let computer_choise;
 let human_choise;
-let human_score=0;
-let computer_score=0;
 function getComputerChoise()
 {
   let random_num=Math.random();
@@ -23,8 +21,13 @@ function getHumanChoise()
     let ans=prompt("enter either rock , paper or scissor:");
     return ans;
 }
-function playRound(human_src,computer_src)
-{
+
+function playGame()
+{ 
+    let human_score=0;
+    let computer_score=0;
+   function playRound(human_src,computer_src)
+  {
     computer_choise=getComputerChoise()
     human_choise=getHumanChoise()
     human_choise.toLowerCase()
@@ -61,6 +64,11 @@ function playRound(human_src,computer_src)
     else
     {
         console.log("TIE!")
-        
+
     }
+    while(human_score<5 || computer_choise<5)
+    {
+        playRound(human_score,computer_choise)
+    }
+}
 }
