@@ -26,49 +26,63 @@ function playGame()
 { 
     let human_score=0;
     let computer_score=0;
-   function playRound(human_src,computer_src)
-  {
     computer_choise=getComputerChoise()
     human_choise=getHumanChoise()
+   function playRound(human_choise,computer_choise)
+  {
     human_choise.toLowerCase()
     if(human_choise==="rock" && computer_choise==="scissor")
     {
-        human_src++;
+        human_score++;
         console.log("YOU WIN!rock beats scissor")
     }
     else if(human_choise==="paper" && computer_choise==="rock")
     {
-        human_src++;
+        human_score++;
         console.log("YOU WIN!paper beats rock")
     }
     else if(human_choise==="scissor" && computer_choise==="paper")
     {   
-        human_src++;
+        human_score++;
         console.log("YOU WIN!scissor beats paper")         
     }
     else if(computer_choise==="rock" && human_choise==="scissor")
     {
-        computer_src++
+        computer_score++
         console.log("YOU LOSE!rock beats scissor")
     }
     else if(computer_choise==="paper" && human_choise==="rock")
     {
-        computer_src++;
+        computer_score++;
         console.log("YOU LOSE!paper beats rock")
     }
     else if(computer_choise==="scissor" && human_choise==="paper")
     {
-        computer_src++;
+        computer_score++;
         console.log("YOU LOSE!scissor beats paper")
     }
-    else
+    else if (computer_choise===human_choise)
     {
         console.log("TIE!")
-
     }
-    while(human_score<5 || computer_choise<5)
+    
+}
+  while(true)
     {
-        playRound(human_score,computer_choise)
+        playRound(human_choise,computer_choise)
+        computer_choise=getComputerChoise()
+        human_choise=getHumanChoise()
+        console.log(human_score)
+        if(human_score>=5)
+        {
+            console.log("YOU WIN THE GAME!")
+            break;
+        }
+        if(computer_score>=5)
+        {
+            console.log("YOU LOSE THE GAME!")
+            break;
+        }
     }
 }
-}
+playGame()
