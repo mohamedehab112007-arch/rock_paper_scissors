@@ -1,5 +1,7 @@
 let computer_choise;
 let human_choise;
+let human_score=0;
+let computer_score=0;
 function getComputerChoise()
 {
   let random_num=Math.random();
@@ -21,5 +23,9 @@ function getHumanChoise()
     let ans=prompt("enter either rock , paper or scissor:");
     return ans;
 }
-human_choise=getHumanChoise()
-console.log(human_choise)
+function playRound(human_src,computer_src)
+{
+      computer_src=getComputerChoise()
+      human_src=getHumanChoise()
+      
+}
