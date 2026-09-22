@@ -1,19 +1,25 @@
-let computer_choise=null;
+let computer_choise;
+let human_choise;
 function getComputerChoise()
 {
   let random_num=Math.random();
   if(random_num<0.3333 && random_num>=0)
   {
-    computer_choise="paper"
+    return "paper";
   }
   else if(random_num>0.3333 && random_num<0.6666)
   {
-   computer_choise="rock" 
+   return "rock"; 
   }
   else 
   {
-   computer_choise="scissor"     
+   return"scissor";     
   }
 }
-getComputerChoise();
-console.log(computer_choise);
+function getHumanChoise()
+{
+    let ans=prompt("enter either rock , paper or scissor:");
+    return ans;
+}
+human_choise=getHumanChoise()
+console.log(human_choise)
