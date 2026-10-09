@@ -9,9 +9,9 @@ let human_choise;
     choises.appendChild(scissor_btn);
     const bod=document.querySelector(".bod");
     bod.appendChild(choises);
-    rock_btn.value="rock";
-    paper_btn.value="paper";
-    scissor_btn.value="scissor";
+    rock_btn.textContent="rock";
+    paper_btn.textContent="paper";
+    scissor_btn.textContent="scissor";
 function getComputerChoise()
 {
   let random_num=Math.random();
@@ -32,6 +32,9 @@ function getHumanChoise()
 {
    // let ans=prompt("enter either rock , paper or scissor:");
     //return ans;
+    rock_btn.addEventListener("click",(event)=>{human_choise=event.target.textContent;})
+    scissor_btn.addEventListener("click",(event)=>human_choise=event.target.textContent)
+    paper_btn.addEventListener("click",(e)=>human_choise=e.target.textContent);
 }
 
 function playGame()
@@ -39,8 +42,8 @@ function playGame()
     let human_score=0;
     let computer_score=0;
     computer_choise=getComputerChoise()
-    human_choise=getHumanChoise()
-   
+    getHumanChoise();
+    
     function playRound(human_choise,computer_choise)
   {
     human_choise.toLowerCase()
