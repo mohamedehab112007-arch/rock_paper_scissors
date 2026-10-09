@@ -1,5 +1,17 @@
 let computer_choise;
 let human_choise;
+ const rock_btn=document.createElement("button");
+    const paper_btn=document.createElement("button");
+    const scissor_btn=document.createElement("button");
+    const choises=document.createElement("div");
+    choises.appendChild(rock_btn);
+    choises.appendChild(paper_btn);
+    choises.appendChild(scissor_btn);
+    const bod=document.querySelector(".bod");
+    bod.appendChild(choises);
+    rock_btn.value="rock";
+    paper_btn.value="paper";
+    scissor_btn.value="scissor";
 function getComputerChoise()
 {
   let random_num=Math.random();
@@ -18,8 +30,8 @@ function getComputerChoise()
 }
 function getHumanChoise()
 {
-    let ans=prompt("enter either rock , paper or scissor:");
-    return ans;
+   // let ans=prompt("enter either rock , paper or scissor:");
+    //return ans;
 }
 
 function playGame()
@@ -28,7 +40,8 @@ function playGame()
     let computer_score=0;
     computer_choise=getComputerChoise()
     human_choise=getHumanChoise()
-   function playRound(human_choise,computer_choise)
+   
+    function playRound(human_choise,computer_choise)
   {
     human_choise.toLowerCase()
     if(human_choise==="rock" && computer_choise==="scissor")
@@ -68,24 +81,24 @@ function playGame()
     
 }
 let i = 0
-  while(i<5)
-    {
-        playRound(human_choise,computer_choise)
-        computer_choise=getComputerChoise()
-        human_choise=getHumanChoise()
-        console.log(human_score)
-        // if(human_score>=5)
-        // {
-        //     console.log("YOU WIN THE GAME!")
-        //     break;
-        // }
-        // if(computer_score>=5)
-        // {
-        //     console.log("YOU LOSE THE GAME!")
-        //     break;
-        // }
-       i++;
-    }
+//   while(i<5)
+//     {
+//         playRound(human_choise,computer_choise)
+//         computer_choise=getComputerChoise()
+//         human_choise=getHumanChoise()
+//         console.log(human_score)
+//         // if(human_score>=5)
+//         // {
+//         //     console.log("YOU WIN THE GAME!")
+//         //     break;
+//         // }
+//         // if(computer_score>=5)
+//         // {
+//         //     console.log("YOU LOSE THE GAME!")
+//         //     break;
+//         // }
+//        i++;
+//     }
     if(human_score>computer_choise)
     {
         console.log("YOU WIN THE GAME!");
