@@ -37,16 +37,16 @@ function getHumanChoise()
 
     rock_btn.addEventListener("click",(event)=>{
         human_choise=event.target.textContent;
-        playRound();
+        playRound(human_choise,computer_choise);
     })
     scissor_btn.addEventListener("click",(event)=>{
         human_choise=event.target.textContent;
-        playRound();
+        playRound(human_choise,computer_choise);
     })
     paper_btn.addEventListener("click",(e)=>{
         human_choise=e.target.textContent
         console.log(human_choise);
-        playRound();
+        playRound(human_choise,computer_choise);
     });
     return human_choise;
 }
@@ -128,35 +128,35 @@ function playGame()
 { 
    
     computer_choise=getComputerChoise()
-    getHumanChoise();
-    console.log(human_choise);
+    human_choise= getHumanChoise();
   
   
-let i = 0
+  
+//let i = 0
 //   while(i<5)
 //     {
 //         playRound(human_choise,computer_choise)
 //         computer_choise=getComputerChoise()
 //         human_choise=getHumanChoise()
 //        // console.log(human_score)
-//         // if(human_score>=5)
-//         // {
-//         //     console.log("YOU WIN THE GAME!")
-//         //     break;
-//         // }
-//         // if(computer_score>=5)
-//         // {
-//         //     console.log("YOU LOSE THE GAME!")
-//         //     break;
-//         // }
+        if(human_score>=5)
+        {
+            console.log("YOU WIN THE GAME!")  
+        }
+        if(computer_score>=5)
+        {
+            console.log("YOU LOSE THE GAME!")
+        }
 //        i++;
 //  }
-    if(human_score>computer_choise)
-    {
-        console.log("YOU WIN THE GAME!");
-    }
-    else{
-        console.log("YOU LOSE THE GAME!");
-    }
+    // if(human_score>computer_choise)
+    // {
+    //     console.log("YOU WIN THE GAME!");
+    // }
+    // else{
+    //     console.log("YOU LOSE THE GAME!");
+    // }
+
 }
+
 playGame()
