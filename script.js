@@ -32,19 +32,25 @@ function getHumanChoise()
 {
    // let ans=prompt("enter either rock , paper or scissor:");
     //return ans;
-    rock_btn.addEventListener("click",(event)=>{human_choise=event.target.textContent;})
-    scissor_btn.addEventListener("click",(event)=>human_choise=event.target.textContent)
-    paper_btn.addEventListener("click",(e)=>human_choise=e.target.textContent);
+
+    rock_btn.addEventListener("click",(event)=>{
+        human_choise=event.target.textContent;
+        playRound();
+    })
+    scissor_btn.addEventListener("click",(event)=>{
+        human_choise=event.target.textContent;
+        playRound();
+    })
+    paper_btn.addEventListener("click",(e)=>{
+        human_choise=e.target.textContent
+        console.log(human_choise);
+        playRound();
+
+    });
+    return human_choise;
 }
 
-function playGame()
-{ 
-    let human_score=0;
-    let computer_score=0;
-    computer_choise=getComputerChoise()
-    getHumanChoise();
-    
-    function playRound(human_choise,computer_choise)
+  function playRound(human_choise,computer_choise)
   {
     human_choise.toLowerCase()
     if(human_choise==="rock" && computer_choise==="scissor")
@@ -83,6 +89,15 @@ function playGame()
     }
     
 }
+function playGame()
+{ 
+    let human_score=0;
+    let computer_score=0;
+    computer_choise=getComputerChoise()
+    getHumanChoise();
+    console.log(human_choise);
+  
+  
 let i = 0
 //   while(i<5)
 //     {
